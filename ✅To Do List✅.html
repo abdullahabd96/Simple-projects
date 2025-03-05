@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✅To Do List✅</title>
+    <link rel="icon" href="">
+    <style>
+        /* Your existing CSS styles here */
+        body {
+            background: linear-gradient(to top, black, rgb(0, 28, 28), rgb(0, 67, 67), rgb(0, 28, 28), black);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            border: none;
+            border-radius: 50px;
+            box-sizing: border-box;
+
+        }
+
+        .addlist {
+            font-size: 2rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            color: rgb(0, 220, 220);
+            background: rgb(0, 75, 75);
+            padding: 10px 15px;
+            border-radius: 50px;
+            border: none;
+            text-shadow: 0 0 20px rgb(0, 24, 24);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .addlistbtn {
+            font-size: 2rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            color: rgb(0, 220, 220);
+            background: rgb(0, 75, 75);
+            text-shadow: 0 0 5px rgb(0, 24, 24);
+            padding: 10px 20px;
+            border-radius: 50%;
+            border: none;
+            transition: all 0.25s ease;
+        }
+
+        .addlistbtn:hover {
+            border-radius: 40%;
+            box-shadow: 0 0 10px aqua;
+        }
+
+        .addlistbtn:active {
+            border-radius: 20%;
+        }
+
+        .addedlist {
+            font-size: 1.5rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            color: rgb(0, 220, 220);
+            background: rgb(0, 75, 75);
+            padding: 10px 15px;
+            border-radius: 50px;
+            border: none;
+            text-shadow: 0 0 20px rgb(0, 24, 24);
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .addedlist:focus {
+            outline: none;
+            box-shadow: 0 0 20px aqua;
+        }
+
+        .addedlist::placeholder {
+            font-size: 1.5rem;
+            color: rgb(0, 150, 150);
+            text-shadow: 0 0 10px rgb(0, 134, 134);
+            transition: all 0.25s ease;
+        }
+
+        .addedlist:focus::placeholder {
+            font-size: 1rem;
+            transform: translateY(-15px);
+        }
+
+        .rmvlistbtn {
+            font-size: 2rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            color: rgb(0, 220, 220);
+            background: rgb(0, 75, 75);
+            text-shadow: 0 0 5px rgb(0, 24, 24);
+            padding: 10px 15px;
+            border-radius: 50%;
+            border: none;
+            transition: all 0.25s ease;
+        }
+
+        .rmvlistbtn:hover {
+            border-radius: 40%;
+            box-shadow: 0 0 10px aqua;
+        }
+
+        .rmvlistbtn:active {
+            border-radius: 20%;
+        }
+
+        .list-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 600px;
+
+        }
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 10px;
+
+        }
+
+        .chckbx {
+            width: 30px;
+            height: 30px;
+            box-shadow: 0 0 10px aqua;
+            border: none;
+            outline: none;
+            background: rgb(0, 75, 75);
+
+        }
+
+        img {
+            border: none;
+            border-radius: 10px;
+            height: 40px;
+            animation: popUp 1s ease-in-out infinite;
+            transition: all 1s linear;
+        }
+
+        img:hover {
+            height: 45px;
+        }
+
+        @keyframes popUp {
+
+            0%,
+            100% {
+                transform: translateY(0px)
+            }
+
+            10% {
+                transform: translateY(20px)
+            }
+
+            20%,
+            60% {
+                transform: rotate(15deg)
+            }
+
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: rotate(0deg)
+            }
+
+            40%,
+            80% {
+                transform: rotate(-15deg)
+            }
+        }
+
+        .abtus {
+            color: rgb(0, 100, 100);
+            margin-top: auto;
+            width: 100%;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgb(0, 100, 100);
+        }
+
+        @media (max-width: 768px) {
+
+            .addlist,
+            .addedlist,
+            .rmvlistbtn,
+            .addlistbtn {
+                font-size: 1.5rem;
+                padding: 8px 12px;
+            }
+
+            .list-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .addedlist {
+                margin-right: 0;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+
+            .chckbx {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .addlist,
+            .addedlist,
+            .rmvlistbtn,
+            .addlistbtn {
+                font-size: 1rem;
+                padding: 5px 10px;
+            }
+
+            img {
+                height: 35px;
+            }
+
+            img:hover {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body body id="bdy" ondragstart="return false" onselectstart="return false" class="">
+
+    <center>
+        <span class="addlist">
+            ✅ To do List ✅
+        </span>
+        <span><button class="addlistbtn" id="add">+</button></span>
+        <div class="list-container" id="listContainer">
+            <!-- List items will be added here dynamically -->
+        </div>
+    </center>
+
+    <center>
+        <div class="abtus">
+            <H3>About Us</H3>
+            <a href="https://www.instagram.com/abdullahabd96" target="_blank"><img
+                    src="https://img.icons8.com/?size=100&id=32323&format=png&color=000000" alt="inst"></a><span
+                style="font-size: 60px; font-weight: bolder;">|</span>
+            <a href="https://wa.me/+94774428399" target="_blank"><img
+                    src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000" alt="WA"></a><span
+                style="font-size: 60px; font-weight: bolder;">|</span>
+            <a href="https://www.facebook.com/profile.php?id=100028617153303&mibextid=ZbWKwL" target="_blank"><img
+                    src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="fb"></a>
+        </div>
+    </center>
+
+    <script>
+        // Function to create a new list item
+        function createListItem(task = '', checked = false) {
+            const listContainer = document.getElementById('listContainer');
+            const listItem = document.createElement('div');
+            listItem.className = 'list-item';
+
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.className = 'addedlist';
+            input.placeholder = 'Add a task';
+            input.value = task;
+
+            const input1 = document.createElement('input');
+            input1.className = 'chckbx';
+            input1.type = 'checkbox';
+            input1.checked = checked;
+
+            const removeButton = document.createElement('button');
+            removeButton.className = 'rmvlistbtn';
+            removeButton.textContent = '-';
+            removeButton.addEventListener('click', removeListItem);
+
+            listItem.appendChild(input);
+            listItem.appendChild(removeButton);
+            listItem.appendChild(input1);
+
+            listContainer.appendChild(listItem);
+        }
+
+        // Function to remove the list item
+        function removeListItem(event) {
+            const listItem = event.target.parentNode;
+            listItem.parentNode.removeChild(listItem);
+            saveListState();
+        }
+
+        // Function to save the list state to localStorage
+        function saveListState() {
+            const listItems = document.querySelectorAll('.list-item');
+            const tasks = [];
+            listItems.forEach(item => {
+                const input = item.querySelector('.addedlist');
+                const checkbox = item.querySelector('.chckbx');
+                tasks.push({
+                    task: input.value,
+                    checked: checkbox.checked
+                });
+            });
+            localStorage.setItem('todoList', JSON.stringify(tasks));
+        }
+
+        // Function to load the list state from localStorage
+        function loadListState() {
+            const tasks = JSON.parse(localStorage.getItem('todoList')) || [];
+            tasks.forEach(task => createListItem(task.task, task.checked));
+        }
+
+        // Event listener for adding new list item
+        document.getElementById("add").addEventListener("click", () => {
+            createListItem();
+            saveListState();
+        });
+
+        // Load the list state when the page is loaded
+        window.addEventListener('load', loadListState);
+
+        // Save list state before the page unloads
+        window.addEventListener('beforeunload', saveListState);
+        // Prevent from Right click to view menu
+        document.addEventListener("contextmenu", (event) => {
+            event.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

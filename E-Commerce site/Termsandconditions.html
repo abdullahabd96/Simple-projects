@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Conditions</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .rating {
+      direction: rtl;
+      font-size: 2rem;
+      unicode-bidi: bidi-override;
+    }
+
+    .rating input {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .rating label {
+      color: #dddddd;
+      font-size: 2rem;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .rating input:checked~label,
+    .rating label:hover,
+    .rating label:hover~label {
+      color: #f7d106;
+    }
+  </style>
+  <style>
+    @media (max-width: 1200px) {
+      .row {
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .row {
+        gap: 1rem;
+      }
+    }
+
+    .row {
+      gap: 1rem;
+      /* Ensures a 1rem gap between cards at all screen sizes */
+    }
+
+    @keyframes popUp {
+      0% {
+        transform: translateY(0px)
+      }
+
+      10% {
+        transform: translateY(20px);
+      }
+
+      20% {
+        transform: rotate(15deg);
+      }
+
+      30% {
+        transform: rotate(0deg);
+      }
+
+      40% {
+        transform: rotate(-15deg);
+      }
+
+      50% {
+        transform: rotate(0deg);
+      }
+
+      60% {
+        transform: rotate(15deg);
+      }
+
+      70% {
+        transform: rotate(0deg);
+      }
+
+      80% {
+        transform: rotate(-15deg);
+      }
+
+      90% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .img {
+      border: none;
+      border-radius: 10px;
+      height: 40px;
+      transition: all 0.1s linear;
+    }
+
+    .img:hover {
+      height: 50px;
+      animation: infinite popUp 0.80s ease-in-out;
+    }
+
+    footer {
+      padding: 20px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .themeButtonlight {
+      color: rgb(4, 49, 100);
+      border: inset 2px rgb(202, 202, 202);
+      border-radius: 48px;
+      background: #eeeeee;
+      border-spacing: 1px;
+      width: 155px;
+      font-size: 45px;
+      text-align: left;
+      transition: all 0.25s linear;
+    }
+
+    .themeButtonDark {
+      color: rgb(123, 148, 177);
+      border: outset 2px rgb(17, 17, 17);
+      border-radius: 48px;
+      background: rgb(48, 48, 48);
+      border-spacing: 1px;
+      width: 155px;
+      font-size: 45px;
+      text-align: right;
+      transition: all 0.25s linear;
+      border-spacing: 0px;
+    }
+
+    .lightTheme {
+      background: #ffffff;
+      color: rgb(34, 34, 34);
+      transition: all 0.25s linear;
+    }
+
+    .darkTheme {
+      background: rgb(26, 26, 26);
+      color: rgb(155, 155, 155);
+      transition: all 0.25s linear;
+    }
+
+    .hidden {
+      visibility: hidden;
+      transition: all 0.01s ease-out;
+    }
+
+    .visible {
+      visibility: visible;
+      transition: all 1s ease-in;
+    }
+
+    span {
+      transition: all 0.01s linear;
+    }
+
+    @keyframes slideR {
+      0% {
+        transform: translateX(0px);
+      }
+
+      50% {
+        transform: translateX(5px);
+      }
+
+      100% {
+        transform: translateX(10px);
+      }
+    }
+
+    @keyframes slideL {
+      0% {
+        transform: translateX(10px);
+      }
+
+      50% {
+        transform: translateX(5px);
+      }
+
+      100% {
+        transform: translateX(0px);
+      }
+    }
+    .card{
+      border-radius: 30px;
+    }
+    .card-img-top{
+      border-radius: 30px;
+    }
+    .btns{
+      border: 1px solid black;
+      color: black;
+    }
+    .btns:hover{
+      color: rgb(184, 184, 184);
+      border: 1px solid black;
+      background:rgb(44, 44, 44);
+    }
+    .btns:active{
+      color:white;
+      background: black;
+    }
+    .cardslight{
+      color: rgb(7, 7, 7);
+      border: none;
+      background: #dddddd;
+    }
+    .cardsDark{
+      color: rgb(202, 202, 202);
+      border: none;
+      background:rgb(53, 53, 53);
+    }
+    .btnsLight{
+      transition: all ease-in-out 0.25s;
+      border: none;
+      border-radius: 12px;
+      color: rgb(10, 10, 10);
+      background: #afafaf;
+    }
+    .btnsLight:hover{
+      color: black;
+      background: rgb(110, 110, 110);
+      border-radius: 20px;
+    }
+    .btnsDark{
+      border: none;
+      transition: all ease-in-out 0.25s;
+      border-radius: 12px;
+      color: rgb(182, 182, 182);
+      background: rgb(31, 31, 31);
+    }
+    .btnsDark:hover{
+      color: white;
+      border-radius: 20px;
+    }
+    /* Base Styles for Navbar Links */
+    .navbar-nav .nav-link {
+    color: rgb(14, 14, 14); /* Default text color */
+    position: relative; /* For absolute positioning of pseudo-elements */
+    padding: 10px 15px; /* Added padding for better click area */
+    transition: color 0.3s, transform 0.3s; /* Smooth color and transform transition */
+}
+
+/* Hover State */
+.navbar-nav .nav-link:hover {
+    color: #f8f8f8; /* Teal color on hover */
+    text-shadow: 0 0 5px rgb(192, 192, 192); /* Glowing text effect */
+    transform: scale(1.1); /* Slightly scale the link */
+}
+
+/* Active State */
+.navbar-nav .nav-link.active {
+    color: rgb(14, 14, 14); /* Teal color for active link */
+    font-weight: bold; /* Make active link bold */
+}
+
+/* Creative Border and Background for Active Link */
+.navbar-nav .nav-link.active::before {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute; /* Position it relative to the link */
+    left: 0; /* Align to the left of the link */
+    right: 0; /* Align to the right of the link */
+    bottom: -5px; /* Position just below the link */
+    height: 4px; /* Height of the underline */
+    background: rgb(27, 27, 27); /* Teal gradient underline */
+    border-radius: 5px; /* Rounded corners */
+    transform: scaleX(1); /* Scale for active state */
+    transition: transform 0.3s; /* Smooth scale transition */
+}
+
+/* Adding Hover Effect for Active Links */
+.navbar-nav .nav-link:hover::before {
+    transform: scaleX(1.2); /* Slightly increase the scale on hover */
+}
+
+/* Dropdown Item Styles */
+.dropdown-menu .dropdown-item {
+  background: rgb(255, 255, 255); /* Teal gradient background on hover */
+  color: rgb(14, 14, 14); /* Change text color on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for dropdown items */
+}
+
+/* Dropdown Item Hover State */
+.dropdown-menu .dropdown-item:hover {
+    background: rgb(221, 221, 221); /* Teal gradient background on hover */
+    color: rgb(14, 14, 14); /* Change text color on hover */
+    border-radius: 5px; /* Rounded corners for dropdown items */
+}
+.cardsDark::placeholder{
+      color: #afafaf;
+    }
+/* div,label,input,span,datalist{
+    border: none;
+    outline: none;
+} */
+body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      /* padding: 20px; */
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .containerLight {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .containerDark{
+      max-width: 800px;
+      margin: 0 auto;
+      color: #dddddd;
+      padding: 20px;
+      background-color: #292929;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #4CAF50;
+    }
+    h2 {
+      font-size: 1.2em;
+      color: #333;
+      margin-top: 1.5em;
+    }
+    p, li {
+      line-height: 1.6;
+    }
+    .section-title {
+      font-weight: bold;
+      color: #333;
+    }
+    .contact-info {
+      font-style: italic;
+    }
+  </style>
+
+</head>
+
+<body id="bdy" class="lightTheme">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="position: fixed; z-index: 1030; width: 100%; background: linear-gradient(to right, rgb(0, 140, 158), rgb(0, 140, 158));">
+    <div class="container-fluid" style="background: rgb(0, 140, 158);">
+      <a class="navbar-brand " href="e-CommerceSite.html"><b>ABC</b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="e-CommerceSite.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#abtus">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="AddProduct.html">
+            Add product
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              More
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Login</a></li>
+              <li><a class="dropdown-item" href="#">Sign up</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="e-CommerceSite.html">Continue as Guest</a></li>
+            </ul>
+          </li>
+          <!-- <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li> -->
+        </ul>
+        <button id="btn1" class="themeButtonlight">
+          <span id="sun" class="light ,visible">☀️</span>
+          <span id="crescent" class="dark, hidden">🌙</span>
+        </button>
+        <form class="d-flex" role="search">
+          
+          <input class="form-control me-2 cardslight" id="inp14" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success btnsLight" style="border-radius: 10px; color: rgb(0, 0, 0);" type="submit">Search</button>
+          <a class="me-2" href="#"><img src="cil-user.svg" style="height: 70%; margin:0 15px 0 10px;" alt="profile"></a>
+        </form>
+      </div>
+    </div>
+  </nav><br><br><br><br>
+  <center>
+    <div id="cont" class="containerLight">
+      <h1>Terms & Conditions</h1>
+      <p><strong>Effective Date:</strong> January 1, 2024</p>
+    
+      <p>Welcome to ABC E-Commerce. By accessing or using our website and services, you agree to comply with and be bound by the following terms and conditions. Please read them carefully before using the website.</p>
+    
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing or using the services of ABC E-Commerce, you agree to be legally bound by these terms, including our Privacy Policy, Refund Policy, and any other applicable guidelines. If you do not agree with any of these terms, please discontinue using the website.</p>
+    
+      <h2>2. Eligibility</h2>
+      <p>You must be at least 18 years old to use our services. By using the website, you represent that you are of legal age and that all information you submit is accurate and truthful. You agree to comply with all local, state, and federal laws when using the website.</p>
+    
+      <h2>3. Accounts</h2>
+      <p>To make purchases or access certain features of the website, you may be required to create an account.</p>
+      <ul>
+        <li><strong>Account Information:</strong> You must provide accurate, current, and complete information during the registration process.</li>
+        <li><strong>Account Security:</strong> You agree to notify us immediately of any unauthorized use of your account or password.</li>
+      </ul>
+    
+      <h2>4. Products and Pricing</h2>
+      <p>We strive to ensure that all descriptions and pricing of products on the website are accurate. However, errors may occur. We reserve the right to correct any inaccuracies, update information, or cancel orders based on incorrect pricing or availability.</p>
+      <ul>
+        <li><strong>Product Availability:</strong> All products are subject to availability and may be withdrawn at any time.</li>
+        <li><strong>Pricing:</strong> Prices are subject to change without prior notice. However, once an order is confirmed, the price cannot be altered.</li>
+      </ul>
+    
+      <h2>5. Orders and Payment</h2>
+      <p>By placing an order, you agree that you are purchasing a product for personal use and not for resale.</p>
+      <ul>
+        <li><strong>Order Acceptance:</strong> We reserve the right to refuse or cancel any order at any time for reasons such as inaccuracies, product availability, or suspected fraud.</li>
+        <li><strong>Payment Methods:</strong> We accept major credit cards, debit cards, and other payment methods specified on our site.</li>
+        <li><strong>Payment Security:</strong> All transactions are processed through secure gateways, and your payment details are encrypted and protected.</li>
+      </ul>
+    
+      <h2>6. Shipping and Delivery</h2>
+      <ul>
+        <li><strong>Shipping Policy:</strong> We ship to most locations domestically and internationally. The shipping cost and delivery time will be provided at checkout based on your location.</li>
+        <li><strong>Delivery Time:</strong> Estimated delivery times are provided but not guaranteed. Delays may occur due to unforeseen factors.</li>
+        <li><strong>Lost or Damaged Items:</strong> If an item is lost or damaged during shipping, please contact our customer service for assistance.</li>
+      </ul>
+    
+      <h2>7. Returns and Refunds</h2>
+      <ul>
+        <li><strong>Return Policy:</strong> We accept returns for most products within 30 days of delivery, provided the items are unused, in original condition, and with all original packaging.</li>
+        <li><strong>Refund Policy:</strong> Refunds will be processed within 14 days of receiving the returned product, excluding shipping fees. Certain items may be non-refundable, such as perishable goods, customized products, or digital downloads.</li>
+        <li><strong>Exchanges:</strong> If you wish to exchange an item, please contact us within the 30-day return period for exchange options.</li>
+      </ul>
+    
+      <h2>8. Intellectual Property</h2>
+      <p>All content on the website, including but not limited to product images, descriptions, text, logos, and designs, are the property of ABC E-Commerce and are protected by intellectual property laws. You may not reproduce, distribute, or use any of the content without our express written permission.</p>
+    
+      <h2>9. User Conduct</h2>
+      <p>By using the website, you agree not to:</p>
+      <ul>
+        <li>Use the website for any unlawful purpose.</li>
+        <li>Engage in any activity that interferes with or disrupts the website or its services.</li>
+        <li>Submit false, inaccurate, or misleading information.</li>
+        <li>Post any content that is defamatory, obscene, or violates any third-party rights.</li>
+      </ul>
+    
+      <h2>10. Limitation of Liability</h2>
+      <p>We strive to provide the best service possible, but we make no guarantees regarding the operation of the website, the information provided, or the products sold.</p>
+      <ul>
+        <li><strong>No Warranties:</strong> The website is provided on an "as is" and "as available" basis, and we disclaim all warranties of any kind.</li>
+        <li><strong>Liability Limitations:</strong> To the maximum extent permitted by law, we are not liable for any direct, indirect, incidental, or consequential damages that may result from your use of the website.</li>
+      </ul>
+    
+      <h2>11. Privacy</h2>
+      <p>Your privacy is important to us. Please review our Privacy Policy to understand how we collect, use, and protect your personal information.</p>
+    
+      <h2>12. Third-Party Links</h2>
+      <p>The website may contain links to third-party websites. These links are provided for convenience, and we do not endorse or control the content of any third-party websites. We are not responsible for any damages or losses caused by third-party websites.</p>
+    
+      <h2>13. Governing Law</h2>
+      <p>These terms and any disputes arising from your use of the website shall be governed by and construed in accordance with the laws of [Your Country/State], without regard to its conflict of law principles.</p>
+    
+      <h2>14. Changes to Terms</h2>
+      <p>We reserve the right to modify or update these terms at any time without prior notice. Changes will be effective immediately upon posting on the website. Your continued use of the website after changes to the terms constitutes acceptance of those changes.</p>
+    
+      <h2>15. Contact Us</h2>
+      <p class="contact-info">
+        [ABC E-Commerce]<br>
+        Email: support@abcecommerce.com<br>
+        Phone: +1-234-567-890<br>
+        Address: 123 E-Commerce St, City, State, ZIP
+      </p>
+    </div>
+  </center>
+  <hr>
+  <footer id="abtus" class="lightTheme" style="background: #0098a37a;">
+    <center>
+      <H3>About Us</H3>
+      <a href="https://www.instagram.com/abdullahabd96" target="_blank"><img class="img"
+          src="cib-instagram.svg"
+          alt="Insta"></a><span style="font-size: 60px; font-weight: bolder;">|</span>
+      <a href="https://wa.me/+94774428399" target="_blank"><img
+          src="cib-whatsapp.svg" class="img"
+          alt="WA"></a><span style="font-size: 60px; font-weight: bolder;">|</span>
+      <a href="https://www.facebook.com/profile.php?id=100028617153303&mibextid=ZbWKwL" target="_blank"><img
+          src="cib-facebook.svg"
+          class="img" alt="FB"></a>
+      <br><br>
+      <p>©2024 ABC. All rights reserved.</p>
+    </center>
+  </footer>
+  <script>
+    document.getElementById("btn1").addEventListener("click", function () {
+
+document.getElementById("btn1").classList.toggle('themeButtonLight');
+document.getElementById("btn1").classList.toggle('themeButtonDark');
+document.getElementById("bdy").classList.toggle('lightTheme');
+document.getElementById("bdy").classList.toggle('darkTheme');
+document.getElementById("sun").classList.toggle('dark');
+document.getElementById("crescent").classList.toggle('light');
+document.getElementById("sun").classList.toggle('hidden');
+document.getElementById("crescent").classList.toggle('visible');
+document.getElementById("abtus").classList.toggle('darkTheme');
+document.getElementById("abtus").classList.toggle('lightTheme');
+document.getElementById("cont").classList.toggle('containerLight');
+document.getElementById("cont").classList.toggle('containerDark');
+for(let i = 1; i < 15; i++){
+    document.getElementById(`inp${i}`).classList.toggle("cardsDark");
+    document.getElementById(`inp${i}`).classList.toggle("cardslight");
+    
+};
+
+});
+// Get all the nav links
+const navLinks = document.querySelectorAll('.nav-link');
+
+// Add click event listener to each link
+navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        // Remove active class from all links
+        navLinks.forEach(nav => nav.classList.remove('active'));
+
+        // Add active class to the clicked link
+        this.classList.add('active');
+    });
+});
+  </script>
+</body>
+
+</html>

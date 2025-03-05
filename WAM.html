@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💬 Multiple Lines 💬</title>
+    <link rel="icon" href="https://img.icons8.com/?size=100&id=16466&format=png&color=40C057">
+    <style>
+        @keyframes floatAnimation {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .bodyDark {
+            background-color: black;
+            transition: all 0.25s linear;
+        }
+
+        body {
+            top: 10%;
+            bottom: 5%;
+            height: 100vh;
+            padding: 20px 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20% 0 20% 0;
+            transition: all 0.25s linear;
+            animation: floatAnimation 2s ease-in-out infinite;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .bodyLight {
+            background-color: white;
+            transition: all 0.25s linear;
+        }
+
+        .buttonLight {
+            background-color: transparent;
+            color: green;
+            font-size: 2rem;
+            font-weight: bolder;
+            border: none;
+            border-radius: 30px;
+            text-shadow: 0px 0px 10px green;
+            box-shadow: 4px 5px 4px rgb(0, 150, 0);
+            padding: 10px 20px;
+            transition: all 0.25s ease;
+            border: inset 1px green;
+            margin: 10px;
+        }
+
+        .buttonLight:hover {
+            font-size: 2.2rem;
+            border-radius: 20px;
+            box-shadow: 8px 10px 12px rgb(0, 125, 0);
+            animation: buttonHover 2s ease-in-out infinite;
+        }
+
+        .buttonLight:active {
+            font-size: 2.4rem;
+            color: white;
+            background-color: green;
+            border-radius: 10px;
+            text-shadow: 0px 0px 10px white;
+            box-shadow: 12px 15px 16px rgb(0, 100, 0);
+            animation: buttonActive 2s ease-in-out infinite;
+            border: solid 1px white;
+        }
+
+        .buttonDark {
+            background-color: transparent;
+            color: green;
+            font-size: 2rem;
+            font-weight: bolder;
+            border: none;
+            border-radius: 30px;
+            text-shadow: 0px 0px 10px green;
+            box-shadow: 4px 5px 4px rgb(0, 150, 0);
+            padding: 10px 20px;
+            transition: all 0.25s ease;
+            border: inset 1px green;
+            margin: 10px;
+        }
+
+        .buttonDark:hover {
+            font-size: 2.2rem;
+            border-radius: 20px;
+            box-shadow: 8px 10px 12px rgb(0, 125, 0);
+            animation: buttonHover 2s ease-in-out infinite;
+        }
+
+        .buttonDark:active {
+            font-size: 2.4rem;
+            color: black;
+            background-color: green;
+            border-radius: 10px;
+            text-shadow: 0px 0px 10px black;
+            box-shadow: 12px 15px 16px rgb(0, 100, 0);
+            animation: buttonActive 2s ease-in-out infinite;
+            border: solid 1px black;
+        }
+
+        .inputLight-container {
+            position: relative;
+            width: 100%;
+            margin: 10px;
+            margin-right: 55px;
+        }
+
+        .inputLight {
+            background-color: transparent;
+            color: green;
+            border-radius: 30px;
+            text-shadow: 0px 0px 10px;
+            font-size: 1.5rem;
+            padding: 10px;
+            width: 100%;
+            box-shadow: 0px 0px 15px green;
+            border: inset green 1px;
+            padding-left: 35px;
+        }
+
+        .inputLight:focus {
+            outline: none;
+            background: transparent;
+            border-style: none;
+            animation: inputActive 2s ease-in-out infinite;
+        }
+
+        .inputLight::selection {
+            background-color: green;
+            color: white;
+        }
+
+        .inputLight::placeholder {
+            color: green;
+            opacity: 75%;
+        }
+
+        .inputLight-container::before {
+            content: '+';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            font-weight: bolder;
+            transform: translateY(-50%);
+            color: green;
+            /* Keep the color green */
+            font-size: 2rem;
+            text-shadow: 0px 0px 10px;
+            pointer-events: none;
+            /* Prevent the '+' from being clickable */
+        }
+
+        .inputDark-container {
+            position: relative;
+            width: 100%;
+            margin: 10px;
+            margin-right: 55px;
+        }
+
+        .inputDark {
+            background-color: transparent;
+            color: green;
+            border-radius: 30px;
+            text-shadow: 0px 0px 10px;
+            font-size: 1.5rem;
+            padding: 10px;
+            width: 100%;
+            box-shadow: 0px 0px 15px green;
+            border: inset green 1px;
+            padding-left: 35px;
+        }
+
+        .inputDark:focus {
+            outline: none;
+            background: transparent;
+            border-style: none;
+            animation: inputActive 2s ease-in-out infinite;
+        }
+
+        .inputDark::selection {
+            background-color: green;
+            color: black;
+        }
+
+        .inputDark::placeholder {
+            color: green;
+            opacity: 75%;
+        }
+
+        .inputDark-container::before {
+            content: '+';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            font-weight: bolder;
+            transform: translateY(-50%);
+            color: green;
+            /* Keep the color green */
+            font-size: 2rem;
+            text-shadow: 0px 0px 10px;
+            pointer-events: none;
+            /* Prevent the '+' from being clickable */
+        }
+
+        .title {
+            color: green;
+            text-shadow: 0px 0px 20px green;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        @keyframes buttonHover {
+
+            0%,
+            100% {
+                transform: rotate(3deg);
+            }
+
+            50% {
+                transform: rotate(-3deg);
+            }
+        }
+
+        @keyframes buttonActive {
+
+            0%,
+            100% {
+                transform: rotate(-3deg);
+            }
+
+            50% {
+                transform: rotate(3deg);
+            }
+        }
+
+        @keyframes inputActive {
+
+            0%,
+            100% {
+                transform: rotate(-0.5deg);
+            }
+
+            50% {
+                transform: rotate(0.5deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .button,
+            .input {
+                font-size: 1.2rem;
+                padding: 5px 10px;
+            }
+
+            .button {
+                margin: 5px;
+            }
+
+            .input {
+                margin: 5px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .button,
+            .input {
+                font-size: 1rem;
+                padding: 5px;
+            }
+        }
+
+        .themeButtonLight {
+            color: black;
+            border: inset 2px black;
+            border-radius: 48px;
+            background: white;
+            border-spacing: 1px;
+            width: 155px;
+            font-size: 45px;
+            text-align: left;
+            transition: all 0.25s linear;
+        }
+
+
+        .themeButtonLight:hover {
+            border-radius: 25px;
+            font-size: 46px;
+            width: 160px;
+            animation: buttonHover ease-in-out 2s infinite;
+        }
+
+        .themeButtonDark {
+            color: white;
+            border: outset 2px white;
+            border-radius: 48px;
+            background: black;
+            border-spacing: 1px;
+            width: 155px;
+            font-size: 45px;
+            text-align: right;
+            transition: all 0.25s linear;
+            border-spacing: 0px;
+        }
+
+        .themeButtonDark:hover {
+            border-radius: 25px;
+            font-size: 46px;
+            width: 160px;
+            animation: buttonHover ease-in-out 2s infinite;
+        }
+
+        img {
+            border: none;
+            border-radius: 10px;
+            height: 40px;
+            animation: infinite popUp 1s ease-in-out;
+            transition: all 1s linear;
+        }
+
+        img:hover {
+            height: 45px;
+        }
+
+        @keyframes popUp {
+            0% {
+                transform: translateY(0px)
+            }
+
+            10% {
+                transform: translateY(20px);
+            }
+
+            20% {
+                transform: rotate(15deg);
+            }
+
+            30% {
+                transform: rotate(0deg);
+            }
+
+            40% {
+                transform: rotate(-15deg);
+            }
+
+            50% {
+                transform: rotate(0deg);
+            }
+
+            60% {
+                transform: rotate(15deg);
+            }
+
+            70% {
+                transform: rotate(0deg);
+            }
+
+            80% {
+                transform: rotate(-15deg);
+            }
+
+            90% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .lightTheme {
+            background: white;
+            color: black;
+            transition: all 0.25s linear;
+        }
+
+        .darkTheme {
+            background: black;
+            color: white;
+            transition: all 0.25s linear;
+        }
+
+        .hidden {
+            visibility: hidden;
+            transition: all 0.01s ease-out;
+        }
+
+        .visible {
+            visibility: visible;
+            transition: all 0.1s ease-in;
+        }
+
+        span {
+            transition: all 0.01s linear;
+        }
+
+        #btn01 {
+            text-shadow: -2px -2px 2px;
+            box-shadow: 3px 3px 3px;
+        }
+
+        #btn01:hover {
+            text-shadow: -3px -3px 3px;
+            box-shadow: 4px 4px 4px;
+        }
+
+        #btn01:active {
+            text-shadow: -4px -4px 4px;
+            animation: buttonActive 2s ease-in-out infinite;
+            border-radius: 12px;
+            font-size: 47px;
+            box-shadow: 5px 5px 5px;
+        }
+    </style>
+</head>
+
+<body id="bdy" ondragstart="return false" onselectstart="return false" class="">
+    <button id="btn01" class="themeButtonLight" style="margin: -5% 1% 0% 96%;">
+        <span id="sun" class="light ,visible">☀️</span>
+        <span id="crescent" class="dark, hidden">🌙</span>
+    </button>
+    <h1 class="title">💬 Send Multiple Lines via WhatsApp 💬</h1>
+    <h3 class="title">Phone Number to send the message:</h3>
+    <button id="countryCodeBtn" class="buttonLight">+94</button>
+    <div class="inputLight-container">
+        <input id="phoneNumber" class="inputLight" type="number" placeholder="Phone Number" required>
+    </div>
+    <h3 class="title">Enter the message:</h3>
+    <input id="message" class="inputLight" type="text" placeholder="Message" required>
+    <h3 class="title">How many lines?</h3>
+    <input id="lineCount" class="inputLight" type="number" placeholder="No. of lines" required>
+    <button id="sendBtn" class="buttonLight">Send</button>
+    <button id="callBtn" class="buttonLight">Call</button>
+    <button id="refreshBtn" class="buttonLight">Refresh</button>
+    <h4 style="opacity: 20%; color: green; text-align: end; font-size: 20px;">
+        abdullahabd96
+    </h4>
+    <hr color="green" width="100%">
+    <footer>
+        <center>
+            <H3>About Us</H3>
+            <a href="https://www.instagram.com/abdullahabd96" target="_blank"><img
+                    src="https://img.icons8.com/?size=100&id=32323&format=png&color=000000" alt="inst"></a><span
+                style="font-size: 60px; font-weight: bolder;">|</span>
+            <a href="https://wa.me/+94774428399" target="_blank"><img
+                    src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000" alt="WA"></a><span
+                style="font-size: 60px; font-weight: bolder;">|</span>
+            <a href="https://www.facebook.com/profile.php?id=100028617153303&mibextid=ZbWKwL" target="_blank"><img
+                    src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="fb"></a>
+        </center>
+    </footer>
+    <script>
+        document.getElementById("countryCodeBtn").addEventListener("click", () => {
+            document.getElementById("phoneNumber").value = '94';
+        });
+
+        document.getElementById("sendBtn").addEventListener("click", () => {
+            const phoneNumber = document.getElementById("phoneNumber").value;
+            const lineCount = document.getElementById("lineCount").value;
+            const message = document.getElementById("message").value;
+
+            if (!phoneNumber) {
+                alert("Enter the Phone number!!!");
+                return;
+            }
+            if (!message) {
+                alert("Enter the Message!!!");
+                return;
+            }
+            if (lineCount <= 0) {
+                alert("Number of lines can't be zero or negative or blank!!!");
+                return;
+            }
+
+            let repeatedMessage = '';
+            for (let i = 1; i <= lineCount; i++) {
+                repeatedMessage += i + '. ' + message + '\n';
+            }
+
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(repeatedMessage)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        document.getElementById("callBtn").addEventListener("click", () => {
+            const phoneNumber = document.getElementById("phoneNumber").value;
+            if (phoneNumber) {
+                window.location.href = 'tel:' + '+' + phoneNumber;
+            } else {
+                alert("Enter Phone number!!!");
+            }
+        });
+
+        document.getElementById("refreshBtn").addEventListener("click", () => {
+            window.location.reload();
+        });
+
+        document.addEventListener("contextmenu", (event) => {
+            alert('Inspect Elements NOT ALLOWED!!!');
+            event.preventDefault();
+        });
+
+        document.getElementById("btn01").addEventListener("click", function () {
+
+            document.getElementById("btn01").classList.toggle('themeButtonLight');
+            document.getElementById("btn01").classList.toggle('themeButtonDark');
+            document.getElementById("bdy").classList.toggle('lightTheme');
+            document.getElementById("bdy").classList.toggle('darkTheme');
+            document.getElementById("sun").classList.toggle('dark');
+            document.getElementById("crescent").classList.toggle('light');
+            document.getElementById("sun").classList.toggle('hidden');
+            document.getElementById("crescent").classList.toggle('visible');
+            document.getElementById("countryCodeBtn").classList.toggle('buttonLight');
+            document.getElementById("countryCodeBtn").classList.toggle('buttonDark');
+            document.getElementById("sendBtn").classList.toggle('buttonLight');
+            document.getElementById("sendBtn").classList.toggle('buttonDark');
+            document.getElementById("callBtn").classList.toggle('buttonLight');
+            document.getElementById("callBtn").classList.toggle('buttonDark');
+            document.getElementById("refreshBtn").classList.toggle('buttonLight');
+            document.getElementById("refreshBtn").classList.toggle('buttonDark');
+            document.getElementById("phoneNumber").classList.toggle('inputLight');
+            document.getElementById("phoneNumber").classList.toggle('inputDark');
+            document.getElementById("message").classList.toggle('inputLight');
+            document.getElementById("message").classList.toggle('inputDark');
+            document.getElementById("lineCount").classList.toggle('inputLight');
+            document.getElementById("lineCount").classList.toggle('inputDark');
+        });
+    </script>
+</body>
+
+</html>
