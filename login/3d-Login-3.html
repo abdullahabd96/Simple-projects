@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Login Form</title>
+    <style>
+        /* General Styles */
+        body {
+            background-color: #121212;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Login Container with 3D Effect */
+        .login-container {
+            background: linear-gradient(to bottom, #222, #1a1a1a);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5), 
+                        -4px -4px 10px rgba(255, 255, 255, 0.1); /* 3D outer shadow */
+            text-align: center;
+            width: 320px;
+        }
+
+        /* Login Title */
+        .login-container h2 {
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Input Fields with 3D Inset Effect */
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background: #2c2c2c;
+            color: #ffffff;
+            font-size: 16px;
+            outline: none;
+            box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.6), 
+                        inset -3px -3px 5px rgba(255, 255, 255, 0.1); /* 3D inset shadow */
+            transition: 0.3s ease-in-out;
+        }
+
+        .input-field:focus {
+            border: 1px solid #00adb5;
+            box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.7), 
+                        inset -1px -1px 3px rgba(255, 255, 255, 0.2), 
+                        0 0 5px #00adb5; /* Adds glow effect */
+        }
+
+        /* 3D Button */
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background: linear-gradient(to bottom, #00adb5, #008a91);
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4), 
+                        -4px -4px 6px rgba(255, 255, 255, 0.1); /* Raised button effect */
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: linear-gradient(to bottom, #008a91, #006d71);
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .login-btn:active {
+            box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.6), 
+                        inset -3px -3px 5px rgba(255, 255, 255, 0.1); /* Pressed effect */
+        }
+
+        /* Forgot Password Link */
+        .forgot-password {
+            display: block;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #aaaaaa;
+            text-decoration: none;
+            transition: 0.3s;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .forgot-password:hover {
+            color: #00adb5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form>
+            <input type="text" class="input-field" placeholder="Username" required>
+            <input type="password" class="input-field" placeholder="Password" required>
+            <button type="submit" class="login-btn">Log in</button>
+        </form>
+        <a href="#" class="forgot-password">Forgot Password?</a>
+    </div>
+
+</body>
+</html>

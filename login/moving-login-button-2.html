@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        form {
+            border: none;
+            border-radius: 20px;
+            background: rgb(207, 207, 207);
+            width: max-content;
+            height: max-content;
+            padding: 20px;
+        }
+
+        td {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 25px;
+            width: 175px;
+        }
+
+        .button {
+            height: 30px;
+            width: 70px;
+            border: none;
+            background: rgb(0, 81, 255);
+            color: white;
+            border-radius: 15px;
+            transition: all 0.25s linear;
+        }
+
+        .button:hover {
+            border-radius: 10px;
+            background: rgb(0, 66, 207);
+        }
+
+        .button:active {
+            border-radius: 5px;
+            background: rgb(0, 48, 151);
+        }
+
+        .input {
+            font-size: 20px;
+            padding-left: 10px;
+            width: 200px;
+            height: 25px;
+            border: none;
+            border-radius: 25px;
+            transition: all 0.1s ease;
+            background: rgb(180, 180, 180);
+        }
+
+        .input:focus {
+            border: none;
+            box-shadow: 0 0 7px rgb(54, 107, 253);
+            outline: 2px solid rgb(54, 107, 253);
+            transition: all 0.1s ease;
+        }
+
+        .input:focus::placeholder {
+            font-size: 10px;
+            transform: translateY(-13px);
+        }
+
+        .input::selection {
+            color: white;
+            background-color: rgb(54, 54, 54);
+        }
+
+        .input::placeholder {
+            color: black;
+            opacity: 50%;
+            border: none;
+            transition: all 0.5s ease;
+        }
+
+        .input.error {
+            outline: 2px solid red;
+        }
+
+        label {
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 15px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <form>
+            <h1>Login</h1>
+            <table>
+                <tr>
+                    <td><label for="un">Username:</label></td>
+                    <td>
+                        <input placeholder="Username" class="input" type="text" id="un">
+                        <div id="un-error" class="error-message">Invalid email address</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="pw">Password:</label></td>
+                    <td>
+                        <input placeholder="Password" class="input" type="password" id="pw">
+                        <div id="pw-error" class="error-message">Password must be at least 6 characters</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="right"><a href="#" style="font-size: 10px;">Forgot Password!</a></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="right"><button type="button" id="logIn" class="button">Log in</button></td>
+                </tr>
+            </table>
+        </form>
+    </center>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const usrnm = document.getElementById("un");
+            const pswrd = document.getElementById("pw");
+            const btn1 = document.getElementById("logIn");
+
+            const unError = document.getElementById("un-error");
+            const pwError = document.getElementById("pw-error");
+
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+
+            function validatePassword(password) {
+                return password.length >= 6;
+            }
+
+            function checkInputs() {
+                let isValid = true;
+
+                if (!validateEmail(usrnm.value)) {
+                    usrnm.classList.add("error");
+                    unError.style.display = "block";
+                    isValid = false;
+                } else {
+                    usrnm.classList.remove("error");
+                    unError.style.display = "none";
+                }
+
+                if (!validatePassword(pswrd.value)) {
+                    pswrd.classList.add("error");
+                    pwError.style.display = "block";
+                    isValid = false;
+                } else {
+                    pswrd.classList.remove("error");
+                    pwError.style.display = "none";
+                }
+
+                if (isValid) {
+                    btn1.style.transform = "translateX(0)";
+                } else {
+                    btn1.style.transform = btn1.style.transform === "translateX(-457%)" ? "translateX(0px)" : "translateX(-457%)";
+                }
+            }
+
+            usrnm.addEventListener("input", checkInputs);
+            pswrd.addEventListener("input", checkInputs);
+
+            btn1.addEventListener("mouseover", checkInputs);
+
+            btn1.addEventListener("click", (event) => {
+                event.preventDefault();
+                checkInputs();
+                if (!usrnm.classList.contains("error") && !pswrd.classList.contains("error")) {
+                    console.log('Log In Successful!');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
