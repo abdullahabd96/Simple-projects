@@ -1,0 +1,373 @@
+body {
+    display: flex;
+    position: relative;
+    background: url("10953281.png");
+    background-color: rgb(0, 15, 15);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* * {
+    outline: 1px solid black;
+} */
+
+.envelope {
+    display: flex;
+    position: relative;
+    background: #ffeb36;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 400px;
+    border: none;
+    border-radius: 10px;
+    z-index: 1;
+    scale: 1;
+    transition: all 3s;
+}
+
+.top-cover {
+    position: absolute;
+    background: none;
+    height: auto;
+    width: auto;
+    top: 0px;
+    right: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-top: 155px solid #fcd115;
+    border-bottom: none;
+    border-radius: 10px;
+    transform-origin: top;
+    transition: all 0.25s ease-in-out;
+    z-index: 4;
+}
+
+
+/* .top-cover:active {
+    border-top: 155px solid #dbb509;
+    transform: rotateX(-180deg) translateY(-3px);
+} */
+
+.bottom-cover {
+    position: absolute;
+    background: none;
+    height: auto;
+    width: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-top: 125px solid #e6c50b;
+    border-bottom: none;
+    border-radius: 10px;
+    transition: all 0.25s;
+    transform: rotateX(180deg);
+    z-index: 3;
+}
+
+.left-cover {
+    position: absolute;
+    background: none;
+    height: auto;
+    width: auto;
+    right: -1px;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    border-left: 127px solid transparent;
+    border-right: 127px solid transparent;
+    border-top: 200px solid #ffe600;
+    border-bottom: none;
+    border-radius: 10px;
+    transform: rotate(90deg);
+    z-index: 3;
+}
+
+.right-cover {
+    position: absolute;
+    background: none;
+    height: auto;
+    width: auto;
+    left: -1px;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    border-left: 127px solid transparent;
+    border-right: 127px solid transparent;
+    border-top: 200px solid #ffe600;
+    border-bottom: none;
+    border-radius: 10px;
+    transform: rotate(90deg) rotateX(180deg);
+    z-index: 3;
+}
+
+.wish-card {
+    position: relative;
+    color: rgb(255, 217, 90);
+    background: #03a381;
+    align-self: center;
+    justify-self: center;
+    width: 370px;
+    height: 220px;
+    border-radius: 8px;
+    z-index: 2;
+    margin: 0;
+    transition: all 3s ease-out;
+}
+
+.content {
+    position: absolute;
+    background: linear-gradient(135deg, #05be96, #00644f);
+    border: double rgb(255, 208, 0) 5px;
+    border-radius: 5px;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    left: 5px;
+    text-orientation: sideways;
+    z-index: 2;
+    box-shadow: 0 0 4px #fcd115, inset 0 0 4px #fcd115;
+}
+
+.name {
+    font-weight: bold;
+    text-shadow: 0 0 10px #ffeb36;
+    margin: 2px 0;
+    font-style: italic;
+}
+
+span {
+    text-shadow: 0 0 10px #ffeb36;
+}
+
+.dua {
+    margin-top: 4px;
+}
+
+.sender {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    z-index: 3;
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    color: #01a17f;
+    text-shadow: #01c79c 0 0 2px;
+}
+
+.eid-heading {
+    text-shadow: 0 0 10px #fcd115;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.container {
+    transition: 2s all;
+
+}
+
+p {
+    margin: 1px;
+    font-weight: 500;
+}
+
+
+/* Responsive adjustments for different screen sizes */
+@media (max-width: 600px) {
+    .envelope {
+        width: 85vw;
+        height: 180px;
+    }
+
+    .wish-card {
+        width: 85vw;
+        height: 160px;
+    }
+}
+
+@media (max-width: 768px) {
+    .envelope {
+        width: 80vw;
+        height: 200px;
+    }
+
+    .wish-card {
+        width: 80vw;
+        height: 180px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .envelope {
+        width: 450px;
+        height: 250px;
+    }
+
+    .wish-card {
+        width: 420px;
+        height: 220px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .envelope {
+        width: 500px;
+        height: 270px;
+    }
+
+    .wish-card {
+        width: 470px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 299px) {
+    /* Reduce font size for text elements */
+    .name, .sender, .eid-heading, p {
+        font-size: 0.6rem; /* Adjust text size specifically */
+    }
+
+    /* Envelope and wish card adjustments */
+    .envelope {
+        width: 80vw;  /* Adjust width for better responsiveness */
+        height: 210px;  /* Adjust height proportionally */
+    }
+
+    .wish-card {
+        width: 70vw;  /* Adjust width proportionally */
+        height: 170px;  /* Adjust height proportionally */
+    }
+
+    /* Adjust top-cover, bottom-cover, left-cover, and right-cover */
+    .top-cover {
+        border-left: 110px solid transparent;
+        border-right: 110px solid transparent;
+        border-top: 110px solid #fcd115;
+    }
+
+    .bottom-cover {
+        border-left: 110px solid transparent;
+        border-right: 110px solid transparent;
+        border-top: 110px solid #e6c50b;
+    }
+
+    .left-cover {
+        border-left: 105px solid transparent;
+        border-right: 110px solid transparent;
+        border-top: 120px solid #ffe600;
+    }
+
+    .right-cover {
+        border-left: 105px solid transparent;
+        border-right: 110px solid transparent;
+        border-top: 120px solid #ffe600;
+    }
+
+    .name {
+        margin: 2px 0;
+    }
+}
+
+
+
+@media (min-width: 1025px) {
+    .envelope {
+        width: 550px;  /* Increased width for larger screens */
+        height: 300px; /* Adjusted height for better proportions on large screens */
+
+    }
+
+    .wish-card {
+        width: 500px; /* Adjusted width to match the envelope */
+        height: 270px; /* Adjusted height for better appearance */
+    }
+
+    .top-cover {
+        border-left: 275px solid transparent;
+        border-right: 275px solid transparent;
+        border-top: 195px solid #fcd115; /* Top cover adjustment */
+    }
+
+    .bottom-cover {
+        border-left: 275px solid transparent;
+        border-right: 275px solid transparent;
+        border-top: 170px solid #e6c50b; /* Bottom cover adjustment */
+    }
+
+    .left-cover {
+        border-left: 150px solid transparent;
+        border-right: 150px solid transparent;
+        border-top: 250px solid #ffe600; /* Left cover adjustment */
+    }
+
+    .right-cover {
+        border-left: 150px solid transparent;
+        border-right: 150px solid transparent;
+        border-top: 250px solid #ffe600; /* Right cover adjustment */
+    }
+}
+
+@media (min-width: 300px) and (max-width: 768px) {
+    /* General text size adjustments */
+    .name, .sender, .eid-heading, p {
+        font-size: 0.6rem;  /* Smaller font size for better readability on small screens */
+    }
+
+    /* Envelope size adjustments */
+    .envelope {
+        width: 85vw;  /* Set envelope to 85% of the viewport width for better adaptation */
+        height: 220px;  /* Ensure the height remains proportional to width */
+        max-width: 450px;  /* Limit maximum width for larger devices */
+        max-height: 240px;  /* Limit maximum height to maintain balance */
+    }
+
+    /* Wish card adjustments */
+    .wish-card {
+        width: 75vw;  /* Make wish card width relative to screen size */
+        height: 170px;  /* Adjust height to fit the smaller envelope */
+        max-width: 420px;  /* Limit width to maintain proportion */
+        max-height: 200px;  /* Adjust max height to maintain aspect ratio */
+    }
+
+    /* Adjust envelope cover elements */
+    .top-cover {
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        border-top: 120px solid #fcd115;  /* Smaller top cover for smaller screens */
+    }
+
+    .bottom-cover {
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        border-top: 120px solid #e6c50b;  /* Smaller bottom cover for smaller screens */
+    }
+
+    .left-cover {
+        border-left: 110px solid transparent;
+        border-right: 110px solid transparent;
+        border-top: 150px solid #ffe600;  /* Adjust left cover size */
+    }
+
+    .right-cover {
+        border-left: 110px solid transparent;
+        border-right: 110px solid transparent;
+        border-top: 150px solid #ffe600;  /* Adjust right cover size */
+    }
+}
